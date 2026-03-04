@@ -10,7 +10,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: vld555/containers-lab-1
+  IMAGE_NAME: SurninDmitri/containers-lab-1
 
 jobs:
   build:
