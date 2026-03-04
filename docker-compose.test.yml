@@ -1,27 +1,31 @@
-version: '3.8'
-
 services:
   postgres:
     image: postgres:15-alpine
     environment:
       POSTGRES_PASSWORD: secret
       POSTGRES_DB: myapp_test
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
     networks:
       - test-network
 
   app:
-    images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.repo }}/app
+    image: ghcr.io/vld555/containers-lab-1/app:latest
     environment:
       DB_HOST: postgres
       DB_PASSWORD: secret
       DB_NAME: myapp_test
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     networks:
       - test-network
 
   nginx:
-    images: ${{ env.REGISTRY }}/${{ steps.repo.outputs.repo }}/nginx
+    image: ghcr.io/vld555/containers-lab-1/nginx:latest
     ports:
       - "80:80"
     depends_on:
