@@ -80,6 +80,9 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Test the built images
+        env:
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           docker compose -f docker-compose.test.yml up -d
           sleep 30
