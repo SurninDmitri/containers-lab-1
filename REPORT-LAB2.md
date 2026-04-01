@@ -53,7 +53,8 @@ text![alt text](media/image-log.png)
 \`\`\`
 ### 5. GitHub Actions
 #### 5.1 Успешная валидация манифестов
-![GitHub Actions Validation]
+![GitHub Actions Validation] <img width="1273" height="97" alt="image" src="https://github.com/user-attachments/assets/582b5b6a-24ba-4953-9c4e-04d58fc310a8" />
+
 ### 6. Ответы на контрольные вопросы
 1. **В чем разница между Pod и Deployment?**  
    Pod — это минимальная единица развертывания в Kubernetes, которая содержит один или несколько контейнеров. Deployment — это более высокий уровень абстракции, который управляет ReplicaSet'ами, обеспечивает стратегии обновления (RollingUpdate), откат изменений и желаемое количество реплик. Deployment автоматически создаёт и управляет ReplicaSet'ами.
