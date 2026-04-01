@@ -33,3 +33,4 @@ spec:
               value: "secret"
             - name: DB_NAME
               value: "myapp"
+# Lab2 completed
