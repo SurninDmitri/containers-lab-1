@@ -2,15 +2,13 @@ name: Build and Push Docker Images
 
 on:
   push:
-    branches: [ main, master ]
-    tags:
-      - 'v*'
+    branches: [ main, master, "lab2/kubernetes-basics" ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, "lab2/kubernetes-basics" ]
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: surnindmitri/containers-lab-1
+  IMAGE_NAME: surnindmitri/containers-lab-2
 
 jobs:
   build:
